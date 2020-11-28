@@ -4,8 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.sql.*;
-import java.net.*;
+
 
 /**
  * Root resource (exposed at "myresource" path)
@@ -21,14 +20,14 @@ public class MyResource {
      */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() throws URISyntaxException {
-		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+    public String getIt() {
+		// URI dbUri = new URI(System.getenv("DATABASE_URL"));
 
-		String username = dbUri.getUserInfo().split(":")[0];
-		String password = dbUri.getUserInfo().split(":")[1];
-		String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+		// String username = dbUri.getUserInfo().split(":")[0];
+		// String password = dbUri.getUserInfo().split(":")[1];
+		// String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
 		//String dbUrl = "Under Construction";
-		return dbUrl;
-        //return "Welcome to this Heroku deployment! Under construction";
+		//return dbUrl;
+        return "Welcome to this Heroku deployment! Under construction";
     }
 }
